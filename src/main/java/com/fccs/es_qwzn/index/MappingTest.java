@@ -34,6 +34,7 @@ public class MappingTest {
 		        		.endObject()  
 		        	.endObject()  
 		        .endObject();
+		System.out.println(mapping.string());
 		client.admin().indices().preparePutMapping("missxu").setType("user").setSource(mapping).execute().actionGet();
 		client.close();
 	}
@@ -65,6 +66,7 @@ public class MappingTest {
 		        		.endObject()  
 		        	.endObject()  
 		        .endObject();
+		System.out.println(mapping.string());
 		client.admin().indices().preparePutMapping("missxu2").setType("user2").setSource(mapping).execute().actionGet();
 		client.close();
 	}
@@ -72,10 +74,12 @@ public class MappingTest {
 	
 	/*
 	 * 复合类型(array)的映射
+	 * 		参考org.elasticsearch.index.mapper.Mapper
+	 * 		并没有ArrayFieldMapper
 	 */
 	@Test
 	public void arrayMapping() throws IOException {
-
+		
 	}
 	
 	/*
