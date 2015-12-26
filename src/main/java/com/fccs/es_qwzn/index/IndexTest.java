@@ -33,7 +33,7 @@ public class IndexTest {
 	@Test
 	public void deleteIndex() {
 		Client client = ClientTemplate.getClient();
-		client.admin().indices().prepareDelete("missxu").execute().actionGet();
+		client.admin().indices().prepareDelete("floor").execute().actionGet();
 		client.close();
 	}
 	
